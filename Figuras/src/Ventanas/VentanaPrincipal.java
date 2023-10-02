@@ -23,5 +23,5 @@ import javax.swing.SwingConstants;
  * @author LEONARDO
  */
 public class VentanaPrincipal {
-    
+       
 }
