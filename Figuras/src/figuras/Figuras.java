@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package figuras;
-
+import Ventanas.VentanaPrincipal;
+import javax.swing.JFrame;
 /**
  *
  * @author LEONARDO
@@ -15,6 +16,8 @@ public class Figuras {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+         VentanaPrincipal ventana = new VentanaPrincipal();
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }
