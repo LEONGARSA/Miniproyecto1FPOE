@@ -25,12 +25,6 @@ import javax.swing.SwingConstants;
  */
 public class VentanaMenu extends JFrame{
     private Background jpBackground;
-    private JPanel imagen1;
-    private JPanel imagen2;
-    private JPanel imagen3;
-    private JPanel imagen4;
-    private JPanel imagen5;
-    private JPanel imagen6;
     private JButton btnJugar  
     private JButton btnInstrucciones
     

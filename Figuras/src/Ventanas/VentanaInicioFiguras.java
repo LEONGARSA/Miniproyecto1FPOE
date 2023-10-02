@@ -111,7 +111,7 @@ public class VentanaInicioFiguras extends JFrame {
         if(!nombre.trim().isEmpty() || nombre.trim().length() > 0){
             Jugador jugador = new Jugador(nombre);        
             dispose(); 
-            VentanaMenu ventanaMenu = new VentanaMenu();              
+            VentanaMenu ventanaMenu = new VentanaMenu(jugador);              
         } else {
             JOptionPane.showMessageDialog(null,"Por favor ingrese su nombre", 
                     "Advertencia", JOptionPane.ERROR_MESSAGE);
