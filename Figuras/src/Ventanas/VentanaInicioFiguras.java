@@ -77,7 +77,7 @@ public class VentanaInicioFiguras extends JFrame {
         jlNombre.setForeground(new Color(0,87,193));
         jlNombre.setFont(new Font("arial", Font.BOLD, 15)); 
                 
-        btnIngresar = new JButton("Iniciar Juego");
+        btnIngresar = new JButton("Ingresar");
         btnIngresar.setBounds(320,350, 150,35);
         
         
@@ -111,7 +111,7 @@ public class VentanaInicioFiguras extends JFrame {
         if(!nombre.trim().isEmpty() || nombre.trim().length() > 0){
             Jugador jugador = new Jugador(nombre);        
             dispose(); 
-            VentanaJuego ventanaJuego = new VentanaJuego(jugador);              
+            VentanaMenu ventanaMenu = new VentanaMenu();              
         } else {
             JOptionPane.showMessageDialog(null,"Por favor ingrese su nombre", 
                     "Advertencia", JOptionPane.ERROR_MESSAGE);
