@@ -22,7 +22,7 @@ import javax.swing.SwingConstants;
  *
  * @author LEONARDO
  */
-public class VentanaPrincipal extends JFrame {
+public class VentanaInicioFiguras extends JFrame {
     
     private JLabel jlMensaje;
     private JLabel jlMensaje1;
@@ -31,7 +31,7 @@ public class VentanaPrincipal extends JFrame {
     private JTextField txtNombre;
     private JButton btnIngresar;
     
-     public VentanaPrincipal(){
+     public VentanaInicioFiguras(){
         iniciarComponentes();
     }
     
