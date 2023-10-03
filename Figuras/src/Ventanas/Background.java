@@ -7,13 +7,14 @@ package Ventanas;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
  *
  * @author LEONARDO
  */
-public class Background extends JPanel{
+public class Background extends JLabel{
     
     ImageIcon imagen;
     String nombre;

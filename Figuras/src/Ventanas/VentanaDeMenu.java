@@ -72,6 +72,7 @@ public class VentanaDeMenu extends JFrame {
        
         ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();
         
+        btnJugar.addActionListener(manejadoraEventos); 
         btnInstruciones.addActionListener(manejadoraEventos);              
                 
 
@@ -87,7 +88,15 @@ public class VentanaDeMenu extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            if(e.getSource() == btnJugar){
+                 JOptionPane.showMessageDialog(null,"Por favor que acabe ya este Proyecto", "me la esta pelando", JOptionPane.ERROR_MESSAGE);
+                               
+            }else if  (e.getSource() == btnInstruciones){ 
+                 dispose();
+                 VentanaDeInstruciones ventanaIntruc = new VentanaDeInstruciones();
+                 ventanaIntruc.setVisible(true);
+            }
+                
         }
     }
 }
