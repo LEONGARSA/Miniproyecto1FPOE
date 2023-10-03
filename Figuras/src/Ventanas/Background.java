@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  */
 public class Background extends JPanel{
     
-        ImageIcon imagen;
+    ImageIcon imagen;
     String nombre;
     
     public Background(String nombre){
