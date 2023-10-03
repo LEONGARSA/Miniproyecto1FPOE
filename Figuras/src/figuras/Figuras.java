@@ -17,7 +17,7 @@ public class Figuras {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         VentanaMenu ventana = new VentanaMenu();
+         VentanaInicioFiguras ventana = new VentanaInicioFiguras();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     

@@ -111,7 +111,9 @@ public class VentanaInicioFiguras extends JFrame {
         if(!nombre.trim().isEmpty() || nombre.trim().length() > 0){
             Jugador jugador = new Jugador(nombre);        
             dispose(); 
-            VentanaMenu ventanaMenu = new VentanaMenu(jugador);              
+            VentanaDeMenu ventanaMenu = new VentanaDeMenu();
+            ventanaMenu.setVisible(true);
+            
         } else {
             JOptionPane.showMessageDialog(null,"Por favor ingrese su nombre", 
                     "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -135,7 +137,18 @@ public class VentanaInicioFiguras extends JFrame {
                 btnIngresar.doClick();
             }
         }
-        
 
+             @Override
+        public void keyPressed(KeyEvent e) {
+            /*System.out.println("Se presionó la tecla " + e.getKeyChar()+
+                    " Con codigo " + e.getKeyCode());*/
+            
+        }
+        
+        @Override
+        public void keyTyped(KeyEvent e) {
+            /*System.out.println("Se digitó la tecla " + e.getKeyChar()+
+                    " Con codigo " + e.getKeyCode());*/
+        }
     }
 }
