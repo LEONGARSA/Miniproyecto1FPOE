@@ -5,6 +5,7 @@
 package figuras;
 import Ventanas.VentanaInicioFiguras;
 import javax.swing.JFrame;
+import Ventanas.VentanaMenu;
 /**
  *
  * @author LEONARDO
@@ -16,7 +17,7 @@ public class Figuras {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         VentanaInicioFiguras ventana = new VentanaInicioFiguras();
+         VentanaMenu ventana = new VentanaMenu();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     

@@ -24,27 +24,32 @@ import javax.swing.SwingConstants;
  * @author LEONARDO
  */
 public class VentanaMenu extends JFrame{
+    
+    private JPanel jpContenido;
     private Background jpBackground;
-    private JButton btnJugar  
-    private JButton btnInstrucciones
+    private JButton btnJugar;  
+    private JButton btnInstrucciones;
     
-public void VentanaMenu (){
+    public void VentanaMenu (){
     
-    iniciarComponentes();
-    setTitle("Figuras, formas >> Tamaños");
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setSize(790,483);
-    setLocationRelativeTo(null);
-    setVisible(true); 
-    setResizable(false);
-    setLayout(null);
-    
-
+        iniciarComponentes();
+        setTitle("Figuras, formas >> Tamaños");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(790,483);
+        setLocationRelativeTo(null);
+        setVisible(true); 
+        setResizable(false);
+        setLayout(null);
     }
 
-private void iniciarComponentes(){
+    private void iniciarComponentes(){
         
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
+      Toolkit miPantalla = Toolkit.getDefaultToolkit();
         
-
+      jpBackground = new Background ("/Imagenes/fondo.png");
+      
+      jpContenido = new JPanel();
+      
+      
+    }
 }
