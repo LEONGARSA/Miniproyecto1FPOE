@@ -70,8 +70,24 @@ public class VentanaDeMenu extends JFrame {
         
         jpContenidoMenu.add(btnInstruciones);
        
-                     
+        ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();
+        
+        btnInstruciones.addActionListener(manejadoraEventos);              
                 
 
+    }
+    
+    
+    
+
+    class ManejadoraDeEventos implements ActionListener {
+
+        public ManejadoraDeEventos() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
     }
 }

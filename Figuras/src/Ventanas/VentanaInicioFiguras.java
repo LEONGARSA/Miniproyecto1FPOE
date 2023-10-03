@@ -114,6 +114,7 @@ public class VentanaInicioFiguras extends JFrame {
             VentanaDeMenu ventanaMenu = new VentanaDeMenu();
             ventanaMenu.setVisible(true);
             
+            
         } else {
             JOptionPane.showMessageDialog(null,"Por favor ingrese su nombre", 
                     "Advertencia", JOptionPane.ERROR_MESSAGE);
