@@ -5,6 +5,7 @@
 package figuras;
 import Ventanas.VentanaInicioFiguras;
 import javax.swing.JFrame;
+import Ventanas.VentanaMenu;
 /**
  *
  * @author LEONARDO
