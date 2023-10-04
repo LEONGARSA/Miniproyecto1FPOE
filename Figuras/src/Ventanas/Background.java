@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  *
  * @author LEONARDO
  */
-public class Background extends JLabel{
+public class Background extends JPanel{
     
     ImageIcon imagen;
     String nombre;

@@ -38,7 +38,7 @@ public class VentanaDeMenu extends JFrame {
         setSize(790,483);
         setLocationRelativeTo(null);
         setVisible(true); 
-        setResizable(false);
+        setResizable(true);
         setLayout(null);
     }
     
@@ -47,8 +47,9 @@ public class VentanaDeMenu extends JFrame {
         
         Toolkit miPantalla = Toolkit.getDefaultToolkit();
         
-        jpBackground = new Background("/imagenes/fondo.png"); 
         jpContenidoMenu = new JPanel();
+        jpBackground = new Background("/imagenes/fondo.png"); 
+        
         
         jpContenidoMenu.setSize(790,483);        
         jpContenidoMenu.setBounds(0,0, 790, 483);
@@ -58,18 +59,24 @@ public class VentanaDeMenu extends JFrame {
         
         jpBackground.setSize(790,483);
         
+       // jpBackground.setComponentZOrder(jpBackground,0);
+
         add(jpBackground);
+        
         add(jpContenidoMenu);
         
         btnJugar = new JButton ("Jugar");
         btnJugar.setBounds(320, 180, 150, 35);    
+        
         jpContenidoMenu.add(btnJugar);
         
         btnInstruciones = new JButton ("Instrucciones");
         btnInstruciones.setBounds(320,240, 150,35);
         
         jpContenidoMenu.add(btnInstruciones);
-       
+        jpContenidoMenu.setComponentZOrder(btnInstruciones,0);
+        jpContenidoMenu.revalidate();
+        
         ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();
         
         btnJugar.addActionListener(manejadoraEventos); 
