@@ -7,6 +7,7 @@ package Ventanas;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
