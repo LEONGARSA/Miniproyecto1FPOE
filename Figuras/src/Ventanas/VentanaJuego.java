@@ -24,18 +24,18 @@ import javax.swing.SwingConstants;
  *
  * @author LEONARDO
  */
-public class VentanaDeInstruciones extends JFrame {
+public class VentanaJuego extends JFrame {
    
-    private JButton btnJugar;
-    private JButton btnVolver;
-    private JPanel jpContenidoIns;
+    private JButton btnFigura1;
+    private JButton btnTerminar;
+    private JPanel jpContenidoJuego;
     private JLabel jlTituloInstruciones;
     private JLabel jlInstruciones;
     
     
     
    // private Background jpBackground;
-    public VentanaDeInstruciones(){
+    public VentanaJuego(){
        iniciarComponentes();
     }
     
@@ -50,19 +50,18 @@ public class VentanaDeInstruciones extends JFrame {
         setResizable(false);
         setLayout(null);
         Toolkit miPantalla = Toolkit.getDefaultToolkit();
-        jpContenidoIns = new JPanel();
+        jpContenidoJuego = new JPanel();
          
        
-        jpContenidoIns.setSize(790,483);        
-        jpContenidoIns.setBounds(0,0, 790, 483);
-        jpContenidoIns.setBackground(new Color(191,177,210));
-        jpContenidoIns.setLayout(null);
+        jpContenidoJuego.setSize(790,483);        
+        jpContenidoJuego.setBounds(0,0, 790, 483);
+        jpContenidoJuego.setBackground(new Color(191,177,210));
+        jpContenidoJuego.setLayout(null);
        
-        jlTituloInstruciones = new JLabel("Instrucciones",SwingConstants.CENTER);
-        jlInstruciones = new JLabel("<html> <p align = center> El objetivo del juego es elegir de los tres tamaños el que se corresponde con el que está a la izquierda de la línea. <br> <br> Mira la figura que está a la izquierda y luego escoge la figura que creas tiene el mismo tamaño entre las tres que te damos en la parte derecha</p><htmal>",SwingConstants.CENTER);
-        
+        jlTituloInstruciones = new JLabel("ventana juego",SwingConstants.CENTER);
+        jlInstruciones = new JLabel("ventana juego",SwingConstants.CENTER);
 
-        add(jpContenidoIns);
+        add(jpContenidoJuego);
              
         jlTituloInstruciones.setBounds( 0,60, 790,20);
         jlTituloInstruciones.setForeground(Color.WHITE);
@@ -72,22 +71,22 @@ public class VentanaDeInstruciones extends JFrame {
         jlInstruciones.setForeground(Color.WHITE);
         jlInstruciones.setFont(new Font("arial", Font.BOLD, 19));
         
-        btnJugar = new JButton ("Jugar");
-        btnJugar.setBounds(320, 300, 150, 35);    
-        jpContenidoIns.add(btnJugar);
+        btnFigura1 = new JButton ("Jugar");
+        btnFigura1.setBounds(320, 300, 150, 35);    
+        jpContenidoJuego.add(btnFigura1);
         
-        btnVolver = new JButton ("volver");
-        btnVolver.setBounds(320,350, 150,35);
+        btnTerminar = new JButton ("terminar");
+        btnTerminar.setBounds(665,10, 100,35);
         
-        jpContenidoIns.add(jlInstruciones);
-        jpContenidoIns.add(jlTituloInstruciones);
-        jpContenidoIns.add(btnVolver);
+        jpContenidoJuego.add(jlInstruciones);
+        jpContenidoJuego.add(jlTituloInstruciones);
+        jpContenidoJuego.add(btnTerminar);
         
        
         ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();
         
-        btnJugar.addActionListener(manejadoraEventos); 
-        btnVolver.addActionListener(manejadoraEventos);              
+        btnFigura1.addActionListener(manejadoraEventos); 
+        btnTerminar.addActionListener(manejadoraEventos);              
                 
 
     }
@@ -102,16 +101,16 @@ public class VentanaDeInstruciones extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-           if(e.getSource() == btnJugar){
-                 dispose();
-                 VentanaJuego ventanaJuego = new VentanaJuego();
-                 ventanaJuego.setVisible(true);
-                               
-            }
-            if (e.getSource() == btnVolver){
+                      
+            if (e.getSource() == btnTerminar){
+                
+                 JOptionPane.showMessageDialog(null,"Por favor que acabe ya este Proyecto", 
+                 "me la esta pelando", JOptionPane.ERROR_MESSAGE);
+                
                  dispose(); 
                  VentanaDeMenu ventanaMenu = new VentanaDeMenu();
                  ventanaMenu.setVisible(true); 
+            
             }
                 
         }
