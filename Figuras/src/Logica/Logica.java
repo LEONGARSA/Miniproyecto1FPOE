@@ -56,6 +56,7 @@ public class Logica  {
             for (File file : files) 
             {
                 fileNames.add(url+"/"+file.getName());
+                
             }
         } 
 
@@ -74,7 +75,7 @@ public class Logica  {
         String figure;
 
         figure = getElementRandomly(listFilesInFolder(url)); //Choose a figure randomly
-        figure = getElementRandomly(listFilesInFolder(figure)); // Choose a color randomly
+
         figures = listFilesInFolder(figure); // Get the chosen figure with its color
         Collections.shuffle(figures); // Shuffle the elements
 
@@ -87,7 +88,7 @@ public class Logica  {
         String figure;
         
         figure = getElementRandomly(listFilesInFolder(url)); //Choose a figure randomly
-        figure = getElementRandomly(listFilesInFolder(figure)); // Choose a color randomly
+
         figures = listFilesInFolder(figure); // Get the chosen figure with its color
         Collections.shuffle(figures); // Shuffle the elements
 

@@ -20,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import Logica.Logica;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Collections;
 import java.util.List;
 
@@ -57,12 +59,12 @@ public class VentanaJuego extends JFrame {
         logica = new Logica();
         figuras = logica.getFigures();
         System.out.println(figuras);
-        //sFiguraMuestra = figuras.get(0).substring(3);
+        sFiguraMuestra = figuras.get(0).substring(3);
 
         Collections.shuffle(figuras);
-       // sFigura1 = figuras.get(0).substring(3);
-        //sFigura2 = figuras.get(1).substring(3);
-        //sFigura3 = figuras.get(2).substring(3);
+        sFigura1 = figuras.get(0).substring(3);
+        sFigura2 = figuras.get(1).substring(3);
+        sFigura3 = figuras.get(2).substring(3);
         //Configuración de la ventana
         setTitle("Figuras, formas >> Tamaños");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,11 +92,15 @@ public class VentanaJuego extends JFrame {
 
         add(jpContenidoJuego);
              
+        FiguraMuestra.setBounds(50, 180, 129, 126);
+        Figura1.setBounds(250, 180, 129, 126);
+        Figura2.setBounds(400, 180, 129, 126);
+        Figura3.setBounds(570, 180, 129, 126);
         jlTituloInstruciones.setBounds( 0,60, 790,20);
         jlTituloInstruciones.setForeground(Color.WHITE);
         jlTituloInstruciones.setFont(new Font("arial", Font.BOLD, 25));  
         
-        jlInstruciones.setBounds(45,120, 700,150);
+        jlInstruciones.setBounds(45,10, 700,150);
         jlInstruciones.setForeground(Color.WHITE);
         jlInstruciones.setFont(new Font("arial", Font.BOLD, 19));
                 
@@ -104,16 +110,83 @@ public class VentanaJuego extends JFrame {
         jpContenidoJuego.add(jlInstruciones);
         jpContenidoJuego.add(jlTituloInstruciones);
         jpContenidoJuego.add(btnTerminar);
-        
+        add(FiguraMuestra);
+        add(Figura1);
+        add(Figura2);
+        add(Figura3);
+
+        getContentPane().setComponentZOrder(FiguraMuestra,0);
+        getContentPane().setComponentZOrder(Figura1,0);
+        getContentPane().setComponentZOrder(Figura2,0);
+        getContentPane().setComponentZOrder(Figura3,0);
+
+
+
        
         ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();
         
  
-        btnTerminar.addActionListener(manejadoraEventos);              
-                
+        btnTerminar.addActionListener(manejadoraEventos);
+        
+        
+        
+       
+        Figura1.addMouseListener(new MouseAdapter() 
+        {
+            @Override
+            public void mouseClicked(MouseEvent e) 
+            {
+                compararFiguras(sFigura1);
+            }
+        });
+        
+        Figura2.addMouseListener(new MouseAdapter() 
+        {
+            @Override
+            public void mouseClicked(MouseEvent e) 
+            {
+                compararFiguras(sFigura2);
+            }
+        });
 
+        Figura3.addMouseListener(new MouseAdapter() 
+        {
+            @Override
+            public void mouseClicked(MouseEvent e) 
+            {
+                compararFiguras(sFigura3);
+            }
+        });
+        
+        getContentPane().revalidate();
+        
     }
-    
+    private void compararFiguras(String figura){
+        System.out.println("1");
+        if (sFiguraMuestra.equals(figura)  ){
+        System.out.println("2");
+        
+            figuras = logica.getFigures();
+       
+            sFiguraMuestra = figuras.get(0).substring(3);
+            Collections.shuffle(figuras);
+            sFigura1 = figuras.get(0).substring(3);
+            sFigura2 = figuras.get(1).substring(3);
+            sFigura3 = figuras.get(2).substring(3);
+            FiguraMuestra.setName(sFiguraMuestra);
+            System.out.println(sFiguraMuestra);
+            Figura1.setName(sFigura1);
+            Figura2.setName(sFigura2);
+            Figura3.setName(sFigura3);
+            FiguraMuestra.repaint();
+            Figura1.repaint();
+            Figura2.repaint();
+            Figura3.repaint();  
+            getContentPane().revalidate();
+        }
+        
+        
+    }
     
     
 
@@ -138,4 +211,6 @@ public class VentanaJuego extends JFrame {
                 
         }
     }
+    
+    
 }
