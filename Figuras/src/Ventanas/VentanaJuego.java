@@ -26,8 +26,10 @@ import java.util.List;
  */
 public class VentanaJuego extends JFrame {
    
-    private JLabel jlTituloInstruciones;
-    private JLabel jlInstruciones;
+    private JLabel jNombreJugador;
+    private JLabel jNumeroFiguras;
+    private JLabel jNumerointentos;
+    private JLabel jNumeroFallos;
     private String sFiguraMuestra;
     private String sFigura1;
     private String sFigura2;
@@ -81,8 +83,10 @@ public class VentanaJuego extends JFrame {
         Figura2 = new Background(sFigura2);
         Figura3 = new Background(sFigura3);
 
-        jlTituloInstruciones = new JLabel("ventana juego",SwingConstants.CENTER);
-        jlInstruciones = new JLabel("ventana juego",SwingConstants.CENTER);
+        jNombreJugador = new JLabel("Jugador: ",SwingConstants.CENTER);
+        jNumeroFiguras = new JLabel("Figuras");
+        jNumerointentos = new JLabel("Intentos ",SwingConstants.CENTER);
+        jNumeroFallos = new JLabel("Fallos: ");
 
         add(jpContenidoJuego);
              
@@ -90,20 +94,32 @@ public class VentanaJuego extends JFrame {
         Figura1.setBounds(250, 180, 129, 126);
         Figura2.setBounds(400, 180, 129, 126);
         Figura3.setBounds(570, 180, 129, 126);
-        jlTituloInstruciones.setBounds( 0,60, 790,20);
-        jlTituloInstruciones.setForeground(Color.WHITE);
-        jlTituloInstruciones.setFont(new Font("arial", Font.BOLD, 25));  
+        jNombreJugador.setBounds( 0,60, 790,20);
+        jNombreJugador.setForeground(Color.WHITE);
+        jNombreJugador.setFont(new Font("arial", Font.BOLD, 25));  
         
-        jlInstruciones.setBounds(45,10, 700,150);
-        jlInstruciones.setForeground(Color.WHITE);
-        jlInstruciones.setFont(new Font("arial", Font.BOLD, 19));
+        jNumeroFiguras.setBounds(45,330, 700,150);
+        jNumeroFiguras.setForeground(Color.WHITE);
+        jNumeroFiguras.setFont(new Font("arial", Font.BOLD, 19));
                 
+        jNumerointentos.setBounds(35,330, 700,150);
+        jNumerointentos.setForeground(Color.WHITE);
+        jNumerointentos.setFont(new Font("arial", Font.BOLD, 19));
+        
+        jNumeroFallos.setBounds(600,330, 700,150);
+        jNumeroFallos.setForeground(Color.WHITE);
+        jNumeroFallos.setFont(new Font("arial", Font.BOLD, 19));
+        
         btnTerminar = new JButton ("terminar");
         btnTerminar.setBounds(665,10, 100,35);
         
-        jpContenidoJuego.add(jlInstruciones);
-        jpContenidoJuego.add(jlTituloInstruciones);
+        jpContenidoJuego.add(jNumeroFiguras);
+        jpContenidoJuego.add(jNombreJugador);
         jpContenidoJuego.add(btnTerminar);
+        jpContenidoJuego.add(jNumerointentos);
+        jpContenidoJuego.add(jNumeroFallos);
+
+
         
         add(FiguraMuestra);
         add(Figura1);
@@ -194,7 +210,7 @@ public class VentanaJuego extends JFrame {
                       
             if (e.getSource() == btnTerminar){
                 
-                 JOptionPane.showMessageDialog(null,"Por favor que acabe ya este Proyecto", 
+                 JOptionPane.showMessageDialog(null,"estas eguro de que quieres salir ?", 
                  "me la esta pelando", JOptionPane.ERROR_MESSAGE);
                 
                  dispose(); 
