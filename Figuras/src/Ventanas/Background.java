@@ -36,4 +36,5 @@ public class Background extends JPanel{
         this.nombre = nombre;
     }
     
+    
 }

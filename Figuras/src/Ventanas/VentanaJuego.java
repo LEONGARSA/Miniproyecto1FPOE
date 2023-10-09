@@ -4,20 +4,15 @@
  */
 package Ventanas;
 
-import Jugador.Jugador;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import Logica.Logica;
 import java.awt.event.MouseAdapter;
@@ -73,7 +68,6 @@ public class VentanaJuego extends JFrame {
         setVisible(true); 
         setResizable(false);
         setLayout(null);
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
         jpContenidoJuego = new JPanel();
          
        
@@ -110,6 +104,7 @@ public class VentanaJuego extends JFrame {
         jpContenidoJuego.add(jlInstruciones);
         jpContenidoJuego.add(jlTituloInstruciones);
         jpContenidoJuego.add(btnTerminar);
+        
         add(FiguraMuestra);
         add(Figura1);
         add(Figura2);
@@ -123,9 +118,7 @@ public class VentanaJuego extends JFrame {
 
 
        
-        ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();
-        
- 
+        ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();        
         btnTerminar.addActionListener(manejadoraEventos);
         
         
@@ -161,32 +154,33 @@ public class VentanaJuego extends JFrame {
         getContentPane().revalidate();
         
     }
-    private void compararFiguras(String figura){
-        System.out.println("1");
-        if (sFiguraMuestra.equals(figura)  ){
-        System.out.println("2");
+    private void compararFiguras(String figura) {
         
-            figuras = logica.getFigures();
+    if (sFiguraMuestra.equals(figura)) {
+        
+        figuras = logica.getFigures();
        
-            sFiguraMuestra = figuras.get(0).substring(3);
-            Collections.shuffle(figuras);
-            sFigura1 = figuras.get(0).substring(3);
-            sFigura2 = figuras.get(1).substring(3);
-            sFigura3 = figuras.get(2).substring(3);
-            FiguraMuestra.setName(sFiguraMuestra);
-            System.out.println(sFiguraMuestra);
-            Figura1.setName(sFigura1);
-            Figura2.setName(sFigura2);
-            Figura3.setName(sFigura3);
-            FiguraMuestra.repaint();
-            Figura1.repaint();
-            Figura2.repaint();
-            Figura3.repaint();  
-            getContentPane().revalidate();
-        }
+        sFiguraMuestra = figuras.get(0).substring(3);
+        Collections.shuffle(figuras);
+        sFigura1 = figuras.get(0).substring(3);
+        sFigura2 = figuras.get(1).substring(3);
+        sFigura3 = figuras.get(2).substring(3);
+
+        // Cambiar las imágenes de los componentes
+        FiguraMuestra.setNombre(sFiguraMuestra);
+        Figura1.setNombre(sFigura1);
+        Figura2.setNombre(sFigura2);
+        Figura3.setNombre(sFigura3);
         
-        
+        FiguraMuestra.repaint();
+        Figura1.repaint();
+        Figura2.repaint();
+        Figura3.repaint();
+
+        getContentPane().revalidate();
     }
+}
+
     
     
 
