@@ -4,6 +4,7 @@
  */
 package figuras;
 import Ventanas.VentanaInicioFiguras;
+import Ventanas.VentanaJuego;
 import javax.swing.JFrame;
 /**
  *
@@ -16,7 +17,7 @@ public class Figuras {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         VentanaInicioFiguras ventana = new VentanaInicioFiguras();
+         VentanaJuego ventana = new VentanaJuego();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
