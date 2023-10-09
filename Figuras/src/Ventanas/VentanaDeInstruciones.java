@@ -102,14 +102,16 @@ public class VentanaDeInstruciones extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(e.getSource() == btnJugar){                
-                JOptionPane.showMessageDialog(null,"Por favor que acabe ya este Proyecto", 
-                 "me la esta pelando", JOptionPane.ERROR_MESSAGE);
-            }else if (e.getSource() == btnVolver){
+           if(e.getSource() == btnJugar){
+                 dispose();
+                 VentanaJuego ventanaJuego = new VentanaJuego();
+                 ventanaJuego.setVisible(true);
+                               
+            }
+            if (e.getSource() == btnVolver){
                  dispose(); 
                  VentanaDeMenu ventanaMenu = new VentanaDeMenu();
                  ventanaMenu.setVisible(true); 
-            
             }
                 
         }

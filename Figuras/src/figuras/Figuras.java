@@ -4,6 +4,7 @@
  */
 package figuras;
 import Ventanas.VentanaInicioFiguras;
+import Ventanas.VentanaJuego;
 import javax.swing.JFrame;
 /**
  *

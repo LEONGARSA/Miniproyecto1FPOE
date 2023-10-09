@@ -53,29 +53,34 @@ public class VentanaDeMenu extends JFrame {
         
         jpContenidoMenu.setSize(790,483);        
         jpContenidoMenu.setBounds(0,0, 790, 483);
-        //jpContenidoMenu.setBackground(new Color(191,177,210));
+        jpContenidoMenu.setBackground(new Color(191,177,210));
         jpContenidoMenu.setLayout(null);
         
         
         jpBackground.setSize(790,483);
         
-       // jpBackground.setComponentZOrder(jpBackground,0);
+        //jpBackground.setComponentZOrder(jpBackground,0);
 
         add(jpBackground);
         
         add(jpContenidoMenu);
         
-        btnJugar = new JButton ("Jugar");
+        /*btnJugar = new JButton ("Jugar");
         btnJugar.setBounds(320, 180, 150, 35);    
         
-        jpContenidoMenu.add(btnJugar);
+        jpContenidoMenu.add(btnJugar);*/
         
         btnInstruciones = new JButton ("Instrucciones");
         btnInstruciones.setBounds(320,240, 150,35);
         
         jpContenidoMenu.add(btnInstruciones);
-        jpContenidoMenu.setComponentZOrder(btnInstruciones,0);
-        jpContenidoMenu.revalidate();
+        /*jpContenidoMenu.setComponentZOrder(btnInstruciones,0);
+        jpContenidoMenu.revalidate();*/
+        
+        btnJugar = new JButton ("Jugar");
+        btnJugar.setBounds(320, 200, 150, 35);    
+        
+        jpContenidoMenu.add(btnJugar);
         
         ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();
         
@@ -96,9 +101,13 @@ public class VentanaDeMenu extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == btnJugar){
-                 JOptionPane.showMessageDialog(null,"Por favor que acabe ya este Proyecto", "me la esta pelando", JOptionPane.ERROR_MESSAGE);
+                 dispose();
+                 VentanaJuego ventanaJuego = new VentanaJuego();
+                 ventanaJuego.setVisible(true);
                                
-            }else if  (e.getSource() == btnInstruciones){ 
+            }
+            
+            if  (e.getSource() == btnInstruciones){ 
                  dispose();
                  VentanaDeInstruciones ventanaIntruc = new VentanaDeInstruciones();
                  ventanaIntruc.setVisible(true);

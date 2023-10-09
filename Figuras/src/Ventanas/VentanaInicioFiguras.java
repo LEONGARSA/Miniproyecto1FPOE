@@ -109,7 +109,8 @@ public class VentanaInicioFiguras extends JFrame {
     private void iniciarJuego(){
         String nombre =txtNombre.getText();
         if(!nombre.trim().isEmpty() || nombre.trim().length() > 0){
-            Jugador jugador = new Jugador(nombre);        
+            Jugador jugador = new Jugador(nombre);
+            jugador.nombre = nombre ;
             dispose(); 
             VentanaDeMenu ventanaMenu = new VentanaDeMenu();
             ventanaMenu.setVisible(true);
