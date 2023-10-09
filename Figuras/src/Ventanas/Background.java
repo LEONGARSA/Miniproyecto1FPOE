@@ -25,11 +25,15 @@ public class Background extends JPanel{
     
     @Override
     public void paint(Graphics g){
-        Dimension tamano = getSize();
+        
         imagen = new ImageIcon(getClass().getResource(nombre));
         g.drawImage(imagen.getImage(), 0, 0, null);
         setOpaque(false);
         super.paint(g);
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
 }

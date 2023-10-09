@@ -26,12 +26,18 @@ import javax.swing.SwingConstants;
  */
 public class VentanaJuego extends JFrame {
    
-    private JButton btnFigura1;
-    private JButton btnTerminar;
-    private JPanel jpContenidoJuego;
     private JLabel jlTituloInstruciones;
     private JLabel jlInstruciones;
-    
+    private String sFiguraMuestra;
+    private String sFigura1;
+    private String sFigura2;
+    private String sFigura3;
+    private Background FiguraMuestra;
+    private Background Figura1;
+    private Background Figura2;
+    private Background Figura3;
+    private JButton btnTerminar;
+    private JPanel jpContenidoJuego;
     
     
    // private Background jpBackground;
@@ -58,6 +64,11 @@ public class VentanaJuego extends JFrame {
         jpContenidoJuego.setBackground(new Color(191,177,210));
         jpContenidoJuego.setLayout(null);
        
+        FiguraMuestra = new Background(sFiguraMuestra);
+        Figura1 = new Background(sFigura1);
+        Figura2 = new Background(sFigura2);
+        Figura3 = new Background(sFigura3);
+
         jlTituloInstruciones = new JLabel("ventana juego",SwingConstants.CENTER);
         jlInstruciones = new JLabel("ventana juego",SwingConstants.CENTER);
 
@@ -70,11 +81,7 @@ public class VentanaJuego extends JFrame {
         jlInstruciones.setBounds(45,120, 700,150);
         jlInstruciones.setForeground(Color.WHITE);
         jlInstruciones.setFont(new Font("arial", Font.BOLD, 19));
-        
-        btnFigura1 = new JButton ("Jugar");
-        btnFigura1.setBounds(320, 300, 150, 35);    
-        jpContenidoJuego.add(btnFigura1);
-        
+                
         btnTerminar = new JButton ("terminar");
         btnTerminar.setBounds(665,10, 100,35);
         
@@ -85,7 +92,7 @@ public class VentanaJuego extends JFrame {
        
         ManejadoraDeEventos manejadoraEventos = new ManejadoraDeEventos();
         
-        btnFigura1.addActionListener(manejadoraEventos); 
+ 
         btnTerminar.addActionListener(manejadoraEventos);              
                 
 
