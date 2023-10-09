@@ -9,10 +9,10 @@ package Jugador;
  * @author LEONARDO
  */
 public class Jugador {
-    private String nombre;
+    public static String nombre;
     
     public Jugador(){
-        nombre = "Jugador 1";
+        
     }
     
     public Jugador(String nombre){
