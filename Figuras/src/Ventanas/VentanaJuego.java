@@ -19,6 +19,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import Logica.Logica;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *
@@ -38,6 +41,10 @@ public class VentanaJuego extends JFrame {
     private Background Figura3;
     private JButton btnTerminar;
     private JPanel jpContenidoJuego;
+    private Logica logica;
+    private List<String> figuras;
+
+    
     
     
    // private Background jpBackground;
@@ -46,7 +53,16 @@ public class VentanaJuego extends JFrame {
     }
     
     private void iniciarComponentes(){
+        
+        logica = new Logica();
+        figuras = logica.getFigures();
+        System.out.println(figuras);
+        //sFiguraMuestra = figuras.get(0).substring(3);
 
+        Collections.shuffle(figuras);
+       // sFigura1 = figuras.get(0).substring(3);
+        //sFigura2 = figuras.get(1).substring(3);
+        //sFigura3 = figuras.get(2).substring(3);
         //Configuración de la ventana
         setTitle("Figuras, formas >> Tamaños");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
