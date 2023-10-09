@@ -4,6 +4,8 @@
  */
 package Ventanas;
 
+import Jugador.Jugador;
+import static Jugador.Jugador.nombre;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -83,7 +85,9 @@ public class VentanaJuego extends JFrame {
         Figura2 = new Background(sFigura2);
         Figura3 = new Background(sFigura3);
 
-        jNombreJugador = new JLabel("Jugador: ",SwingConstants.CENTER);
+        Jugador jugador = new Jugador();
+        nombre = jugador.getNombre();
+        jNombreJugador = new JLabel("Jugador: "+ nombre,SwingConstants.CENTER);
         jNumeroFiguras = new JLabel("Figuras");
         jNumerointentos = new JLabel("Intentos ",SwingConstants.CENTER);
         jNumeroFallos = new JLabel("Fallos: ");
